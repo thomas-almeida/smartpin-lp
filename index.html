@@ -1,112 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>SmartPin Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- Header -->
-    <header class="flex justify-between items-center p-14 py-2 px-40 pt-20">
-        <h1 class="text-xl font-bold">smartPin</h1>
-        <div class="space-x-4">
-            <button class="border border-black py-2 px-4 rounded">Já Tenho Conta</button>
-            <button class="bg-black text-white py-2 px-4 rounded">Agendar Demo</button>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="text-center py-36 px-6">
-        <h2 class="text-4xl font-bold">Venda suas <span class="text-purple-600">Makes</span>,<br> melhor e mais Rápido.</h2>
-    </section>
+<body class="bg-gray-50 font-sans" onload="rollSegments()">
+    <!-- Header -->
+    <div class="p-12 py-40 px-40 bg-[url('public/gradient.png')] bg-cover border-b-4 rounded-xl shadow-xl">
+
+        <header class="flex justify-between items-center">
+            <h1 class="text-xl font-bold flex justify-start items-center">
+                smartPin
+                <img src="public/pin.png" class="w-[20px]" alt="">
+            </h1>
+            <div class="space-x-4 flex items-center">
+                <button class="border border-black py-2 px-4 rounded">Já Tenho Conta</button>
+                <b class="italic">Ou</b>
+                <button class="bg-black text-white py-2 px-4 rounded">Agendar Demo</button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="text-center py-36 px-6 mt-12 fadeInUp-animation">
+            <h2 class="text-6xl font-bold flex flex-col justify-start items-center">
+                <span class="flex justify-start items-center fadeInUp-animation">
+                    <p class="mr-2">Venda</p>
+                    <p class="mr-2 " id="prefix">suas</p>
+                    <p class="text-purple-600" id="name">Makes</p>,
+                </span>
+                <br>
+                <span class="relative top-[-50px] flex">melhor e mais
+                    Rápido<img src="public/cash.png" class="bounce ml-2" />.</span>
+            </h2>
+        </section>
+    </div>
 
     <!-- Features Section -->
     <section class="py-12 bg-white">
-        <div class="text-center py-12 mb-8 flex items-center justify-start px-[10%]">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest Logo" class="w-[50px]">
-            <p class="text-md w-[60%] text-left">Crie pins com links de afiliado para vender de forma automatizada com recomendações que seguem as tendências do Pinterest.</p>
+        <div class="text-center py-12 mb-8 flex items-center justify-center">
+            <div class="flex justify-start items-center w-[70%]">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest Logo"
+                    class="w-[80px] mr-2">
+                <p class="text-2xl w-[80%] text-left">Crie pins com links de afiliado para vender de forma automatizada
+                    com
+                    recomendações que seguem as tendências do Pinterest.</p>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-6">
-            <div class="p-6 rounded-xl border-2 text-center w-[260px]">
-                <img src="public/plug-n-play.png" alt="">
-                <h3 class="font-bold">Plug and Play</h3>
-                <p class="mt-2 text-sm">Com poucos cliques, você já está criando pins super qualificados e gerando resultados.</p>
-            </div>
-            <div class="p-6 rounded-xl border-2 text-center w-[260px]">
-                <img src="public/ominichannel.png" alt="">
-                <h3 class="font-bold">Omnichannel</h3>
-                <p class="mt-2 text-sm">Integre seus links de afiliado aos pins de forma 100% automática e simples.</p>
-            </div>
-            <div class="p-6 rounded-xl border-2 text-center w-[260px]">
-                <img src="public/profit.png" alt="">
-                <h3 class="font-bold">Fature +3x</h3>
-                <p class="mt-2 text-sm">Saiba em tempo real como seus posts estão performando, profissionalize seus disparos.</p>
+        <div class="flex justify-center items-center">
+            <div class="grid grid-cols-3 justify-center w-[75%]">
+                <div class="border p-12 rounded-xl mx-4 flex justify-center items-center">
+                    <div>
+                        <div class="flex justify-center">
+                            <img src="public/plug-n-play.png" alt="">
+                        </div>
+
+                        <h3 class="font-bold text-2xl">Plug and Play</h3>
+                        <p class="mt-2 text-sm">Com poucos cliques, você já está criando pins super qualificados e
+                            gerando
+                            resultados.</p>
+                    </div>
+                </div>
+                <div class="border p-12 rounded-xl mx-4 flex justify-center items-center">
+                    <div>
+                        <div class="flex justify-center">
+                            <img src="public/ominichannel.png" class="py-2" alt="">
+                        </div>
+
+                        <h3 class="font-bold text-2xl">Omnichannel</h3>
+                        <p class="mt-2 text-sm">Integre seus links de afiliado aos pins de forma 100% automática e
+                            simples.
+                        </p>
+                    </div>
+                </div>
+                <div class="border p-12 rounded-xl mx-4 flex justify-center items-center">
+                    <div>
+                        <div class="flex justify-center">
+                            <img src="public/profit.png" class="py-10" alt="">
+                        </div>
+
+                        <h3 class="font-bold text-2xl">Fature +3x</h3>
+                        <p class="mt-2 text-sm">Saiba em tempo real como seus posts estão performando, profissionalize
+                            seus
+                            disparos.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Case Study Section -->
-    <section class="py-12 px-6">
-        <h2 class="text-center text-2xl font-bold mb-8">Faça como a Biscoitê que após disparar com a smartPin conseguiu:</h2>
+    <section class="py-24 px-6">
+        <h2 class="text-center text-2xl font-bold mb-8">Com a smartPin vc consegue alcançar:
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div class="text-center border py-12 w-[250px] rounded-lg border-2">
-                <p class="text-2xl font-bold">4.4 Milhões 👀</p>
-                <p class="text-sm">de Visualizações mensais no perfil.</p>
+            <div class="text-center border py-20 w-[300px] rounded-lg border-2">
+                <p class="text-4xl font-bold mb-2">4.4 Milhões 👀</p>
+                <p class="text-md px-6">de Visualizações mensais no perfil.</p>
             </div>
-            <div class="text-center border py-12 w-[250px] rounded-lg border-2">
-                <p class="text-2xl font-bold">+500🎁</p>
-                <p class="text-sm">vendas mensais em links de afiliado com aumento no ticket médio.</p>
+            <div class="text-center border py-20 w-[300px] rounded-lg border-2">
+                <p class="text-4xl font-bold mb-2">+500🎁</p>
+                <p class="text-md px-6">vendas mensais em links de afiliado, aumento no ticket médio.</p>
             </div>
-            <div class="text-center border py-12 w-[250px] rounded-lg border-2">
-                <p class="text-2xl font-bold">+R$ 15K💸</p>
-                <p class="text-sm">em faturamento usando a smartPin para disparar.</p>
+            <div class="text-center border py-20 w-[300px] rounded-lg border-2">
+                <p class="text-4xl font-bold mb-2">+R$ 15K💸</p>
+                <p class="text-md px-6">em faturamento usando a smartPin para disparar.</p>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="py-12 bg-gray-100 px-6">
-        <h2 class="text-center text-2xl font-bold mb-8">Feito pra você vender Melhor e mais Rápido, confira os planos.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div class="bg-white p-6 rounded shadow text-center">
-                <h3 class="font-bold">Básico</h3>
-                <p class="text-2xl font-bold my-4">R$ 195,90</p>
-                <ul class="text-sm space-y-2">
-                    <li>2 Contas de Afiliado</li>
-                    <li>20 Disparos /mês</li>
-                    <li>Treinamento</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded shadow text-center">
-                <h3 class="font-bold">Profissional</h3>
-                <p class="text-2xl font-bold my-4">R$ 329,90</p>
-                <ul class="text-sm space-y-2">
-                    <li>5 Contas de Afiliado</li>
-                    <li>100 Disparos /mês</li>
-                    <li>Treinamento</li>
-                    <li>Suporte Prioritário</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded shadow text-center">
-                <h3 class="font-bold">Marketing</h3>
-                <p class="text-2xl font-bold my-4">R$ 859,90</p>
-                <ul class="text-sm space-y-2">
-                    <li>10 Contas de Afiliado</li>
-                    <li>500 Disparos /mês</li>
-                    <li>Treinamento</li>
-                    <li>Suporte Prioritário</li>
-                    <li>Painel CRM</li>
-                </ul>
+        <h2 class="text-center text-2xl font-bold mb-8">Feito pra você vender Melhor e mais Rápido.
+        </h2>
+        <div class="flex justify-center items-center">
+            <div>
+                <button class="border border-black py-2 px-4 rounded mr-2">Já Tenho Conta</button>
+                <b class="italic">Ou</b>
+                <button class="bg-black text-white py-2 px-4 rounded ml-2 ">Agendar Demo</button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-8 text-center text-sm text-gray-500">
-        <p>smartPin - venda melhor, mais rápido</p>
-        <p>Blog | Termos e condições</p>
-        <p>Copyright © 2024 Purple Box - CNPJ: 58.271.413/0001-90 PURPLE BOX TECNOLOGIA LTDA</p>
+        <div class="flex justify-center items-center p-1 mb-4">
+            <p class="mx-2 text-lg text-black font-semibold">smartPin - venda melhor, mais rápido</p>
+            <a href="termos-e-condicoes.html" class="mx-2 text-lg cursor-pointer hover:text-black font-semibold">Termos e condições</a>
+        </div>
+        <p>Copyright © 2025 SmartPin - CNPJ: 00.00.0000/0001-90 AAAA LTDA</p>
     </footer>
 </body>
+<script src="roll-segments.js"></script>
+
 </html>
