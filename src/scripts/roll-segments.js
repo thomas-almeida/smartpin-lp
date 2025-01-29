@@ -12,7 +12,17 @@ const allSegments = [
   {
     prefix: 'suas',
     name: 'Ofertas',
-    color: '#ff0c0c'
+    color: '#20a011'
+  },
+  {
+    prefix: 'seus',
+    name: 'Eletrônicos',
+    color: '#e137ff'
+  },
+  {
+    prefix: 'suas',
+    name: 'Makes',
+    color: '#9333ea'
   },
 ]
 
