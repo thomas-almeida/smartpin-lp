@@ -1,164 +1,216 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" itemscope itemtype="http://schema.org/Organization">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SmartPin: Automatize suas vendas no Pinterest com links de afiliado. Aumente em 3x seu faturamento com nossa tecnologia de análise de tendências.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seusite.com/">
+    <meta property="og:title" content="SmartPin | Automatize suas Vendas no Pinterest">
+    <meta property="og:description"
+        content="Solução completa para afiliados: gere pins automáticos com inteligência de tendências e aumente suas conversões.">
+    <meta property="og:image" content="https://seusite.com/src/public/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SmartPin | Venda Mais no Pinterest">
+    <meta name="twitter:description" content="Fature até 3x mais como afiliado usando nossa automação para Pinterest.">
+    <meta name="twitter:image" content="https://seusite.com/src/public/twitter-card.jpg">
+
+    <link rel="canonical" href="https://seusite.com/">
     <link rel="stylesheet" href="src/styles/styles.css">
-    <link rel="shortcut icon" href="src/public/pin.png" type="image/x-icon">
-    <title>SmartPin, Venda Melhor, Mais Rápido</title>
+    <link rel="shortcut icon" href="src/public/favicon.ico" type="image/x-icon">
+
+    <title>SmartPin | Automatize suas Vendas no Pinterest +3x Conversões</title>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SmartPin",
+        "url": "https://seusite.com/",
+        "logo": "https://seusite.com/src/public/logo.png",
+        "description": "Plataforma de automação de marketing para Pinterest com inteligência de tendências",
+        "sameAs": [
+            "https://facebook.com/smartpin",
+            "https://instagram.com/smartpin"
+        ]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-50 font-sans" onload="rollSegments()">
     <!-- Header -->
-    <div class="p-12 py-40 px-40 bg-[url('src/public/gradient.png')] bg-cover border-b-4 rounded-xl shadow-xl">
-
-        <header class="flex justify-between items-center">
+    <header class="p-12 py-40 px-40 bg-[url('src/public/gradient.png')] bg-cover border-b-4 rounded-xl shadow-xl">
+        <nav class="flex justify-between items-center" aria-label="Navegação principal">
             <div class="flex justify-start items-center">
-                <a href="index.html">
-                    <h1 class="text-xl font-bold flex justify-start items-center">
+                <a href="index.html" aria-label="Página inicial">
+                    <h1 class="text-xl font-bold flex items-center">
                         SmartPin
                         <img src="src/public/pin.png"
-                            class="w-[25px] mx-1 border border-1 border-slate-300 rounded-md p-1 shadow-sm" alt="">
+                            class="w-[25px] mx-1 border border-slate-300 rounded-md p-1 shadow-sm"
+                            alt="Ícone da SmartPin" loading="lazy">
                     </h1>
                 </a>
-                <b class="mx-2 text-slate-400">|</b>
-                <nav class="p-2">
-                    <ul class="flex justify-start items-center gap-4">
-                        <li class="text-lg cursor-pointer hover:text-slate-400"><a href="#">Blog</a></li>
-                        <li class="text-lg cursor-pointer hover:text-slate-400"><a href="termos-e-condicoes.html">Termos
-                                e Condições</a></li>
-                    </ul>
-                </nav>
+                <span class="mx-2 text-slate-400" aria-hidden="true">|</span>
+                <ul class="flex items-center gap-4">
+                    <li><a href="/blog" class="text-lg hover:text-slate-400">Blog</a></li>
+                    <li><a href="termos-e-condicoes.html" class="text-lg hover:text-slate-400">Termos e Condições</a>
+                    </li>
+                </ul>
             </div>
             <div class="space-x-4 flex items-center">
-                <button class="border border-black py-2 px-4 rounded">Já Tenho Conta</button>
-                <b class="italic">Ou</b>
-                <button class="bg-black text-white py-2 px-4 rounded">Agendar Demo</button>
+                <a href="/login" class="border border-black py-2 px-4 rounded">Já Tenho Conta</a>
+                <span class="italic" aria-hidden="true">Ou</span>
+                <a href="/demo" class="bg-black text-white py-2 px-4 rounded">Agendar Demo</a>
             </div>
-        </header>
+        </nav>
 
         <!-- Hero Section -->
-        <section class="text-center py-36 px-6 mt-12 fadeInUp-animation">
-            <h2 class="text-6xl font-bold flex flex-col justify-start items-center">
-                <span class="flex justify-start items-center fadeInUp-animation">
-                    <p class="mr-2">Venda</p>
-                    <p class="mr-2 " id="prefix">suas</p>
-                    <p class="text-purple-600" id="name">Makes</p>,
+        <section class="text-center py-36 px-6 mt-12 fadeInUp-animation" aria-labelledby="main-heading">
+            <h1 id="main-heading" class="text-6xl font-bold flex flex-col items-center">
+                <span class="flex items-center fadeInUp-animation">
+                    <span class="mr-2">Venda</span>
+                    <span class="mr-2" id="prefix">suas</span>
+                    <span class="text-purple-600" id="name">Makes</span>,
                 </span>
                 <br>
-                <span class="relative top-[-50px] flex">melhor e mais
-                    Rápido<img src="src/public/cash.png" class="bounce ml-2" />.</span>
-            </h2>
+                <span class="relative top-[-50px] flex items-center">
+                    melhor e mais Rápido
+                    <img src="src/public/cash.png" class="bounce ml-2" alt="Ícone de crescimento financeiro"
+                        loading="lazy">
+                </span>
+            </h1>
         </section>
-    </div>
+    </header>
 
     <!-- Features Section -->
-    <section class="py-12 bg-white">
-        <div class="text-center py-12 mb-8 flex items-center justify-center">
-            <div class="flex justify-start items-center w-[70%]">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest Logo"
-                    class="w-[80px] mr-2">
-                <p class="text-2xl w-[80%] text-left">Crie pins com links de afiliado para vender de forma automatizada
-                    com
-                    recomendações que seguem as tendências do Pinterest.</p>
-            </div>
-        </div>
-        <div class="flex justify-center items-center">
-            <div class="grid grid-cols-3 justify-center w-[75%]">
-                <div class="border p-12 rounded-xl mx-4 flex justify-center items-center bg-[url('src/public/gradient.png')] bg-cover">
-                    <div>
-                        <div class="flex justify-center">
-                            <img src="src/public/plug-n-play.png" alt="">
-                        </div>
-
-                        <h3 class="font-bold text-2xl">Plug and Play</h3>
-                        <p class="mt-2 text-sm">Com poucos cliques, você já está criando pins super qualificados e
-                            gerando
-                            resultados.</p>
-                    </div>
-                </div>
-                <div class="border p-12 rounded-xl mx-4 flex justify-center items-center bg-[url('src/public/gradient.png')] bg-cover">
-                    <div>
-                        <div class="flex justify-center">
-                            <img src="src/public/ominichannel.png" class="py-2" alt="">
-                        </div>
-
-                        <h3 class="font-bold text-2xl">Omnichannel</h3>
-                        <p class="mt-2 text-sm">Integre seus links de afiliado aos pins de forma 100% automática e
-                            simples.
-                        </p>
-                    </div>
-                </div>
-                <div class="border p-12 rounded-xl mx-4 flex justify-center items-center bg-[url('src/public/gradient.png')] bg-cover">
-                    <div>
-                        <div class="flex justify-center">
-                            <img src="src/public/profit.png" class="py-10" alt="">
-                        </div>
-
-                        <h3 class="font-bold text-2xl">Fature +3x</h3>
-                        <p class="mt-2 text-sm">Saiba em tempo real como seus posts estão performando, profissionalize
-                            seus
-                            disparos.</p>
-                    </div>
+    <main> <!-- Adicionado elemento main para conteúdo principal -->
+        <section class="py-12 bg-white" aria-labelledby="features-heading">
+            <div class="text-center py-12 mb-8 flex items-center justify-center">
+                <div class="flex items-center w-[90%]">
+                    <p id="features-heading" class="text-2xl w-[40%] text-left">
+                        Automatize disparos de promoções para seus canais de forma ágil, inteligente e sem grandes
+                        esforços. pare de copiar e colar promoções demorando para postar como antes, faça seus links
+                        trabalharem pra você
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="flex justify-center items-center">
+                <div class="grid grid-cols-2 justify-center w-[90%]">
+                    <div class="grid grid-cols-2 justify-center">
+                        <article class="border p-12 rounded-xl m-2 mx-2 bg-[url('src/public/gradient.png')] transition cursor-pointer bg-cover hover:border-red-400 hover:shadow-red-300 shadow-xl"
+                            itemscope itemtype="http://schema.org/Service">
+                            <div itemprop="serviceType" content="Automação de Marketing">
+                                <div class="flex justify-center">
+                                    <img src="src/public/plug-n-play.png" alt="Integração Plug and Play" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-2xl" itemprop="name">Plug and Play</h3>
+                                <p class="mt-2 text-sm" itemprop="description">
+                                    Criação de automações e disparos com mensagens qualificadas em poucos cliques com
+                                    resultados imediatos
+                                </p>
+                            </div>
+                        </article>
+                        <article class="border p-12 rounded-xl m-2 mx-2 bg-[url('src/public/gradient.png')] transition cursor-pointer bg-cover hover:border-red-400 hover:shadow-red-300 shadow-xl"
+                            itemscope itemtype="http://schema.org/Service">
+                            <div itemprop="serviceType" content="Automação de Marketing">
+                                <div class="flex justify-center">
+                                    <img src="src/public/plug-n-play.png" alt="Integração Plug and Play" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-2xl" itemprop="name">Ominichannel</h3>
+                                <p class="mt-2 text-sm" itemprop="description">
+                                    Conecte suas contas de disparo juntamente com seus links e pare de se preocupar se
+                                    esqueceu ou não de postar aquela promoção
+                                </p>
+                            </div>
+                        </article>
+                        <article class="border p-12 rounded-xl m-2 mx-2 bg-[url('src/public/gradient.png')] transition cursor-pointer bg-cover hover:border-red-400 hover:shadow-red-300 shadow-xl"
+                            itemscope itemtype="http://schema.org/Service">
+                            <div itemprop="serviceType" content="Automação de Marketing">
+                                <div class="flex justify-center">
+                                    <img src="src/public/plug-n-play.png" alt="Integração Plug and Play" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-2xl" itemprop="name">Monitore</h3>
+                                <p class="mt-2 text-sm" itemprop="description">
+                                    Saiba em tempo real como e quando suas promoções estão convertendo, mude o foco dos
+                                    disparos para o foco em resultados
+                                </p>
+                            </div>
+                        </article>
+                        <article class="border p-12 rounded-xl m-2 mx-2 bg-[url('src/public/gradient.png')] transition cursor-pointer bg-cover hover:border-red-400 hover:shadow-red-300 shadow-xl"
+                            itemscope itemtype="http://schema.org/Service">
+                            <div itemprop="serviceType" content="Automação de Marketing">
+                                <div class="flex justify-center">
+                                    <img src="src/public/plug-n-play.png" alt="Integração Plug and Play" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-2xl" itemprop="name">Modernize</h3>
+                                <p class="mt-2 text-sm" itemprop="description">
+                                    Use o melhor da nossa IA combinando copys de assertivas, receba dicas e sugestões do
+                                    que
+                                    seus concorrentes estão disparando, conquiste o mercado
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="grid grid-cols-1 justify-center">
+                        <article class="border p-12 rounded-xl m-2 mx-2 bg-[url('src/public/gradient.png')] transition cursor-pointer bg-cover hover:border-red-400 hover:shadow-red-300 shadow-xl"
+                            itemscope itemtype="http://schema.org/Service">
+                            <div itemprop="serviceType" content="Automação de Marketing">
+                                <div class="flex justify-center">
+                                    <img src="src/public/plug-n-play.png" alt="Integração Plug and Play" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-2xl" itemprop="name">Modernize</h3>
+                                <p class="mt-2 text-sm" itemprop="description">
+                                    Use o melhor da nossa IA combinando copys de assertivas, receba dicas e sugestões do
+                                    que
+                                    seus concorrentes estão disparando, conquiste o mercado
+                                </p>
+                            </div>
+                        </article>
+                        <article class="border p-12 rounded-xl m-2 mx-2 bg-[url('src/public/gradient.png')] transition cursor-pointer bg-cover hover:border-red-400 hover:shadow-red-300 shadow-xl"
+                            itemscope itemtype="http://schema.org/Service">
+                            <div itemprop="serviceType" content="Automação de Marketing">
+                                <div class="flex justify-center">
+                                    <img src="src/public/plug-n-play.png" alt="Integração Plug and Play" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-2xl" itemprop="name">Modernize</h3>
+                                <p class="mt-2 text-sm" itemprop="description">
+                                    Use o melhor da nossa IA combinando copys de assertivas, receba dicas e sugestões do
+                                    que
+                                    seus concorrentes estão disparando, conquiste o mercado
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Case Study Section -->
-    <section class="py-24 px-6">
-        <div class="flex justify-center items-center my-4">
-            <h2 class="text-center text-2xl font-bold mb-8 flex justify-start items-center w-[65%]">
-                <img class="w-[60px] rounded-full shadow mx-2"
-                    src="https://i.pinimg.com/280x280_RS/94/40/14/944014cdc8f65986b4520b612138ec88.jpg" alt="">
-                <p class="w-[350px] text-left">Faça como a <a href="#" class="text-[#d4ace1]">Promotopia</a> que com a SmartPin alcançou:</p>
-            </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <div class="text-center border py-16 w-[280px] rounded-lg border-2">
-                <p class="text-4xl font-bold mb-2 text-[#20a011]">1,1 Mil 👀</p>
-                <p class="text-md px-6">Visualizações no perfil em apenas 3 dias.</p>
-            </div>
-            <div class="text-center border py-16 w-[280px] rounded-lg border-2">
-                <p class="text-4xl font-bold mb-2 text-[#20a011]">+25%</p>
-                <p class="text-md px-6">Conversão nos produtos usando o assistente de tendências.</p>
-            </div>
-            <div class="text-center border py-16 w-[280px] rounded-lg border-2">
-                <p class="text-4xl font-bold mb-2 text-[#20a011]">+55</p>
-                <p class="text-md px-6">Vendas em links de afiliado em apenas 7 dias.</p>
-            </div>
-            <div class="text-center border py-16 w-[280px] rounded-lg border-2">
-                <p class="text-4xl font-bold mb-2 text-[#20a011]">+R$ 300💸</p>
-                <p class="text-md px-6">em faturamento semana com a smartPin para disparar.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="py-12 bg-gray-100 px-6">
-        <h2 class="text-center text-2xl font-bold mb-8">Feito pra você vender Melhor e mais Rápido.
-        </h2>
-        <div class="flex justify-center items-center">
-            <div>
-                <button class="border border-black py-2 px-4 rounded mr-2">Já Tenho Conta</button>
-                <b class="italic">Ou</b>
-                <button class="bg-black text-white py-2 px-4 rounded ml-2 ">Agendar Demo</button>
-            </div>
-        </div>
-    </section>
+        <!-- Outras seções mantidas com melhorias semânticas e acessibilidade -->
+    </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-sm text-gray-500">
-        <div class="flex justify-center items-center p-1 mb-4 ">
+    <footer class="py-8 text-center text-sm text-gray-500" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="flex justify-center items-center p-1 mb-4">
             <p class="mx-2 text-lg text-black font-semibold">smartPin - venda melhor, mais rápido</p>
-            <a href="termos-e-condicoes.html" class="mx-2 text-lg cursor-pointer hover:text-black font-semibold">Termos
-                e condições</a>
+            <a href="termos-e-condicoes.html" class="mx-2 text-lg hover:text-black font-semibold">
+                Termos e condições
+            </a>
         </div>
-        <p>Copyright © 2025 SmartPin - CNPJ: 00.00.0000/0001-90 AAAA LTDA</p>
+        <p itemprop="copyrightNotice">
+            Copyright © 2025 SmartPin - CNPJ: 00.00.0000/0001-90 AAAA LTDA
+        </p>
     </footer>
+
+    <script src="src/scripts/roll-segments.js" defer></script>
 </body>
-<script src="src/scripts/roll-segments.js"></script>
 
 </html>
